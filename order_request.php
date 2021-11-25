@@ -1,9 +1,10 @@
 <!doctype html>
 <html>
-<head>
+ <head>
     <meta charset="utf-8">
     <title>Jade Delight Pt.2 Order Summary</title>
     <link href="style.css" rel="stylesheet" />
+
     <style type='text/css'>
         body {font-size: 25px;}
         /* .costDiv {display: inline;} */
@@ -14,16 +15,16 @@
         .bg-cover h1 {
         position:absolute;
         text-align:right;
-
+        text-shadow: 1px 1px black;
         font-size:100px;
-        color:#FFF;	
+        color:#FFF;
         left:550px;
         top:80px;
         }
         body {
         padding:0;
         margin:0;
-        }  
+        }
         .summary {
         padding: 10px;
         margin: 20px;
@@ -35,7 +36,7 @@
         grid-gap: 20px;
         }
         .submit {
-            background-color:rgb(238, 105, 16); 
+            background-color:rgb(238, 105, 16);
             border: none;
             color: white;
             padding: 15px 32px;
@@ -45,13 +46,13 @@
             font-size: 16px;
         }
     </style>
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-</head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+ </head>
 
-<body>
-
-    <div style="background: url(dumplings.jpg)" class="jumbotron bg-cover text-white">
+ <body>
+    <div style="background: url(koifish.jpg)" class="jumbotron bg-cover text-white">
         <div class="container py-5 text-center">
             <h1 class="display-4 font-weight-bold">Jade Delight Pt.2</h1>
         </div>
@@ -81,14 +82,14 @@
     $total = $_REQUEST["total"];
     $order_ready_time = $_REQUEST["order_ready_time"];
 
- 
+
 
     echo "Order For: ";
     echo $_POST["fname"];
     echo " ";
     echo $_POST["lname"];
     echo "<br>";
- 
+
     //establish connection info
     $server = "sql311.epizy.com";
     $userid = "epiz_30316465";
@@ -106,7 +107,7 @@
 
     //select the database
     $conn->select_db($db);
-    
+
     //run a query
     $sql = "SELECT * FROM products";
     //   echo "<br />The query is: " . $sql ."<br />";
@@ -121,7 +122,7 @@
     //////////////////////////////////////////////////
     $row = $result->fetch_array();
     if ($NumItems1 > 0) {
-        echo "<p>$NumItems1</p>"; 
+        echo "<p>$NumItems1</p>";
         $type = $row['ItemName'];
         echo "<p>$type</p>";
         $type = $row['CostEach'];
@@ -131,7 +132,7 @@
     //////////////////////////////////////////////////
     $row = $result->fetch_array();
     if ($NumItems2 > 0) {
-        echo "<p>$NumItems2</p>"; 
+        echo "<p>$NumItems2</p>";
         $type = $row['ItemName'];
         echo "<p>$type</p>";
         $type = $row['CostEach'];
@@ -141,7 +142,7 @@
     //////////////////////////////////////////////////
     $row = $result->fetch_array();
     if ($NumItems3 > 0) {
-        echo "<p>$NumItems3</p>"; 
+        echo "<p>$NumItems3</p>";
         $type = $row['ItemName'];
         echo "<p>$type</p>";
         $type = $row['CostEach'];
@@ -151,7 +152,7 @@
     //////////////////////////////////////////////////
     $row = $result->fetch_array();
     if ($NumItems4 > 0) {
-        echo "<p>$NumItems4</p>"; 
+        echo "<p>$NumItems4</p>";
         $type = $row['ItemName'];
         echo "<p>$type</p>";
         $type = $row['CostEach'];
@@ -162,7 +163,7 @@
     $row = $result->fetch_array();
     $quantity = $row["NumItems"];
     if ($NumItems5 > 0) {
-        echo "<p>$NumItems5</p>"; 
+        echo "<p>$NumItems5</p>";
         $type = $row['ItemName'];
         echo "<p>$type</p>";
         $type = $row['CostEach'];
@@ -172,9 +173,9 @@
     //////////////////////////////////////////////////
     echo "</div>";
 
-    // free results set 
+    // free results set
     $result->free();
-    //close the connection	
+    //close the connection
     $conn->close();
 
     echo "<br><br>";
@@ -202,10 +203,10 @@
         $message .= ".";
     }
     else {
-        $message .= " for pickup";  
+        $message .= " for pickup";
     }
     mail("seoyun1020@gmail.com", "Your Jade Delight Order Summary", $message);
-    
+
     ?>
     </div>
 </body>
