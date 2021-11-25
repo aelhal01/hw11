@@ -91,10 +91,10 @@
     echo "<br>";
 
     //establish connection info
-    $server = "sql311.epizy.com";
-    $userid = "epiz_30316465";
-    $pw = "5JjJCsrFsT";
-    $db= "epiz_30316465_jade_delight_pt2";
+    $server = "sql302.epizy.com";
+    $userid = "epiz_30444378";
+    $pw = "vK1feifBip";
+    $db= "epiz_30444378_jadedelight2";
 
     // Create connection
     $conn = new mysqli($server, $userid, $pw );
@@ -205,7 +205,7 @@
     else {
         $message .= " for pickup";
     }
-    mail("seoyun1020@gmail.com", "Your Jade Delight Order Summary", $message);
+    mail("asma.halwany@gmail.com", "Your Jade Delight Order Summary", $message);
 
     ?>
     </div>
