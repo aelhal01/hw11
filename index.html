@@ -16,14 +16,14 @@
     text-align:right;
 
     font-size:100px;
-    color:#FFF;	
+    color:#FFF;
     left:550px;
     top:80px;
     }
     body {
     padding:0;
     margin:0;
-    }  
+    }
     form {
     padding: 10px;
     margin: 20px;
@@ -35,7 +35,7 @@
     grid-gap: 20px;
     }
     .submit {
-        background-color:rgb(238, 105, 16); 
+        background-color:rgb(238, 105, 16);
         border: none;
         color: white;
         padding: 15px 32px;
@@ -47,15 +47,15 @@
 
 input[type=text] {
     font-size: 20px;
-    padding:5px; 
-    border:2px solid #ccc; 
+    padding:5px;
+    border:2px solid #ccc;
     -webkit-border-radius: 5px;
     border-radius: 5px;
 }
 select[type=text] {
     font-size: 100%;
-    padding:5px; 
-    border:2px solid #ccc; 
+    padding:5px;
+    border:2px solid #ccc;
     -webkit-border-radius: 5px;
     border-radius: 5px;
 }
@@ -121,7 +121,7 @@ select[type=text] {
                 cost4 = 1 * document.getElementById("cost4").value;
                 cost5 = 1 * document.getElementById("cost5").value;
                 subtotal = 0;
-                subtotal = cost1 + cost2 + cost3 + cost4 + cost5; 
+                subtotal = cost1 + cost2 + cost3 + cost4 + cost5;
                 document.getElementById("subtotal").value = (subtotal * 1).toFixed(2);
                 tax = calc_tax(subtotal);
                 calc_total(subtotal, tax);
@@ -136,7 +136,7 @@ select[type=text] {
             if (phoneRegex.test(phone)) {
                 return true;
             } else {
-                return false; 
+                return false;
             }
         }
 
@@ -168,7 +168,7 @@ select[type=text] {
                     if (street == "") {
                         alert("Street must be filled out");
                         return formisvalid;
-                    } 
+                    }
                     else if (city == "") {
                         alert("City must be filled out");
                         return formisvalid;
@@ -198,7 +198,7 @@ select[type=text] {
 
 </script>
 
-<div style="background: url(dumplings.jpg)" class="jumbotron bg-cover text-white">
+<div style="background: url(koifish.jpg)" class="jumbotron bg-cover text-white">
     <div class="container py-5 text-center">
         <h1 class="display-4 font-weight-bold">Jade Delight Pt.2</h1>
     </div>
@@ -215,8 +215,8 @@ select[type=text] {
     </div>
 
     <p>Phone*: <input type="text" id="phone" name='phone' /></p>
-    <p> 
-        <input id="pickup" type="radio"  onclick=PorD_Check() name="p_or_d" value = "pickup" checked="checked"/>Pickup  
+    <p>
+        <input id="pickup" type="radio"  onclick=PorD_Check() name="p_or_d" value = "pickup" checked="checked"/>Pickup
         <input id="delivery" type="radio"  onclick=PorD_Check() name='p_or_d' value = 'delivery'/>
         Delivery
     </p>
@@ -239,7 +239,7 @@ select[type=text] {
 
   //select the database
   $conn->select_db($db);
-    
+
   //run a query
   $sql = "SELECT * FROM products";
   $result = $conn->query($sql);
@@ -319,9 +319,9 @@ echo "<input type='text' id='cost5' name='cost5'/>";
 //////////////////////////////////////////////////////////////////////////////////////////
 
 echo "</div>";
-  // free results set 
+  // free results set
   $result->free();
-  //close the connection	
+  //close the connection
   $conn->close();
 
   ?>
@@ -330,7 +330,7 @@ echo "</div>";
     <p>Mass tax 6.25%: $ <input type="text"  name='tax' id="tax" /></p>
     <p>Total: $ <input type="text"  name='total' id="total" /></p>
 
-    <input type = "submit" id="submit_button" value = "Submit Order" class='submit'/> 
+    <input type = "submit" id="submit_button" value = "Submit Order" class='submit'/>
 
     <input type="text"  name='order_ready_time' id="order_ready_time" style="visibility: hidden" />
 
